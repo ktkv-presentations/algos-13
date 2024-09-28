@@ -23,135 +23,229 @@
 		<div class="slides">
 			<section>
 				<h1>
-					Beautiful presentations
+					модульное программирование
 				</h1>
-				<h2>New features</h2>
-				<ul>
-					<li>Nerd icons </li>
-					<li><code class="js">(inline) => code("highlighting")</code></li>
-					<li>Automatic QR Code generation</li>
-					<li>and much more!</li>
-				</ul>
-			</section>
-			<section>
-				<h1>
-					Custom TokyoNight theme
-				</h1>
-				<h2 class="fragment">That has</h2>
-				<h3 class="fragment">Multi</h3>
-				<h4 class="fragment">Level</h4>
-				<h5 class="fragment">Heading</h5>
-				<h6 class="fragment">Coloring</h6>
-				<h6>Thanks to this project <a href="https://github.com/tcmmichaelb139/obsidian-tokyonight"></a> for the
-					colorscheme!</h6>
+				<img data-type="qrcode" alt="https://ktkv-presentations.github.io/algos-13" class="r-stretch">
 			</section>
 			<section>
 				<section>
-					<h1>Tailwind CSS</h1>
-					<div class="grid grid-cols-2 gap-8">
-						<div>
-							<h5>Lorem, ipsum.</h5>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quod fugiat harum modi laboriosam
-								dignissimos, maxime possimus? Error, nihil in.</p>
-						</div>
-						<div>
-							<h5>Lorem, ipsum.</h5>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quod fugiat harum modi laboriosam
-								dignissimos, maxime possimus? Error, nihil in.</p>
-						</div>
-						<div class="col-span-2">
-							<h5>Lorem, ipsum.</h5>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quod fugiat harum modi laboriosam
-								dignissimos, maxime possimus? Error, nihil in.</p>
-						</div>
-					</div>
-				</section>
-				<section>
-					<h1>Custom classes</h1>
-					<div class="grid grid-cols-3 gap-8">
-						<div class="border-r">
-							<h5>border-r</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, soluta!</p>
-						</div>
-						<div class="border-o">
-							<h5>border-o</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, soluta!</p>
-						</div>
-						<div class="border-y">
-							<h5>border-y</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, soluta!</p>
-						</div>
+					<h1>Модульное программирование</h1>
+					<p>
+						метод разработки программного обеспечения, при котором программа разбивается на небольшие независимые части
+					</p>
+					<h4>Преимущества</h4>
+					<div class="grid grid-cols-3 gap-4">
+						<div class="border-b">Меньше повторений в коде</div>
+						<div class="border-b">Упрощение логики программы</div>
+						<div class="border-b">Облегчение отладки и тестирования</div>
 					</div>
 				</section>
 			</section>
 			<section>
-				<section data-auto-animate>
-					<h1>New code highlighting!</h1>
-					<div>
-						Now also has Tokyo Night <code>highlight.js</code> highlighting implementation
+				<section>
+					<h1>Модуль</h1>
+					<p>отдельный файл в программе, содержащий функции, классы, переменные и другие объекты, которые можно
+						использовать в других частях программы через импорт</p>
+					<div class="border-y">В Python модуль — это любой файл с расширением <code class="plaintext">.py</code></div>
+				</section>
+				<section>
+					<h1>Пример модуля в Python</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="plaintext">fibo.py</code>
+							<pre><code class="python">
+def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+def fib2(n):
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        a, b = b, a+b
+    return result
+					</code></pre>
+						</div>
+						<div class="border-b">
+							<code class="plaintext">main.py</code>
+							<pre><code class="python">
+import fibo
+
+fibo.fib(1000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+
+fibo.fib2(100)
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+					</code></pre>
+						</div>
 					</div>
-					<pre><code data-trim data-noescape>
-var foo = {
-    bar: function () {
-             alert("Hello, World!");
-         }
-};	
+				</section>
+				<section>
+					<h1>Типы модулей</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<h4>Встроенные модули</h4>
+							<p>Предоставляются вместе с интерпретатором</p>
+							<ul>
+								<li><code class="python">math</code> — предоставляет математические функции</li>
+								<li><code class="python">os</code> — содержит функции для работы с операционной системой</li>
+								<li><code class="python">random</code> — используется для генерации случайных чисел</li>
+							</ul>
+						</div>
+						<div class="border-b">
+							<h4>Пользовательские модули</h4>
+							<p>Модули, которые создает пользователь или модули, которые предоставляют установленные библиотеки</p>
+							<ul>
+								<li><code class="python">from django.db import models</code></li>
+								<li><code class="python">import fibo</code></li>
+								<li><code class="python">import numpy as np</code></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h1>Встроенные модули</h1>
+					<iframe data-src="https://docs.python.org/3/py-modindex.html" class="r-stretch"></iframe>
+				</section>
+				<section>
+					<h1>Метод поиска модулей</h1>
+					<ol>
+						<li>Python сначала ищет модуль в текущем рабочем каталоге</li>
+						<li>Затем, если модуль не найден, проверяются каталоги, указанные в переменной окружения PYTHONPATH</li>
+						<li>В последнюю очередь Python обращается к стандартной библиотеке и каталогам, указанным в списке sys.path
+						</li>
+						<li>В указанной пользователем директории</li>
+					</ol>
+					<pre><code class="python">
+import sys
+sys.path.append('/path/to/my/modules')
 					</code></pre>
 				</section>
-				<section data-auto-animate>
-					<h1>New code highlighting!</h1>
-					<h5>Inline code highlighting is now also supported!</h5>
-					<p>
-						Just wrap your code with <code>&lt;code&gt;</code> tag and get
-						highlighting like this <code class="js">const foo = () => {return bar}</code>!
+				<section>
+					<h1>Имя модуля и его использование</h1>
+					<p>Каждый модуль имеет специальную переменную <code class="plaintext">__name__</code>, которая содержит имя
+						модуля.</p>
+					<pre><code class="python">
+if __name__ == "__main__":
+    print("Этот код выполняется, если модуль запущен напрямую")
+else:
+    print("Этот код выполняется, если модуль импортирован")
+					</code></pre>
+					<p>Если модуль запущен напрямую, __name__ будет равно __main__. Если модуль импортирован, его имя будет именем
+						файла.</p>
+				</section>
+				<section>
+					<h1>Хранение модулей</h1>
+					<p>Модули хранятся рядом с главным файлов <code class="plaintext">main.py</code> или в папках внутри проекта
 					</p>
+					<pre><code class="plaintext">
+/project
+├── data_processing.py  # Модуль для обработки данных
+├── user_interface.py   # Модуль для взаимодействия с пользователем
+└── main.py             # Основной файл программы
+					</code></pre>
 				</section>
 			</section>
 			<section>
-				<h1>Mermaid for beautiful diagrams!</h1>
-				<div class="mermaid">
-					<pre>
-						erDiagram
-    CUSTOMER ||--o{ ORDER : ""
-    CUSTOMER {
-        string name
-        string custNumber
-        string sector
-    }
-    ORDER ||--|{ LINE-ITEM : contains
-    ORDER {
-        int orderNumber
-        string deliveryAddress
-    }
-    LINE-ITEM {
-        string productCode
-        int quantity
-        float pricePerUnit
-    }
-    ORDER ||--|{ STUDENT : contains
-    STUDENT {
-        int orderNumber
-        string deliveryAddress
-    }
-						</pre>
-				</div>
-				<h4>Check documentation <a href="https://mermaid.js.org/config/usage.html">here</a>!</h4>
+				<section>
+					<h1>Структура модуля</h1>
+					<h2>Импорт библиотек</h2>
+					<p>В начале основного файла всегда располагаются команды <code class="python">import</code>, которые загружают
+						нужные модули и библиотеки</p>
+					<pre><code class="python">
+import math
+import os
+from datetime import datetime
+					</code></pre>
+				</section>
+				<section>
+					<h1>Структура модуля</h1>
+					<h2>Константы</h2>
+					<p>глобальные переменные или константы, которые описываются в верхнем регистре</p>
+					<pre><code class="python">
+PI = 3.14159
+FILE_PATH = "/usr/data/"
+					</code></pre>
+				</section>
+				<section>
+					<h1>Структура модуля</h1>
+					<h2>Функции</h2>
+					<pre><code class="python">
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b
+					</code></pre>
+				</section>
+				<section>
+					<h1>Структура модуля</h1>
+					<h2>Классы</h2>
+					<pre><code class="python">
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return PI * self.radius ** 2
+					</code></pre>
+				</section>
+				<section>
+					<h1>Структура модуля</h1>
+					<h2>Тесты</h2>
+					<p>используется для того, чтобы включить тестирование или демонстрацию функционала модуля</p>
+					<pre><code class="python">
+if __name__ == "__main__":
+    circle = Circle(5)
+    print("Area of the circle:", circle.area())
+					</code></pre>
+				</section>
 			</section>
 			<section>
-				<h1>Now supports Nerd font icons!</h1>
-				<div>Nerdy project that adds icons to font itself</div>
-				<h6>Checkout their site for icons like this <a href="https://www.nerdfonts.com/">󰖟</a>!
-				</h6>
+				<section>
+					<h1>Документация модулей</h1>
+					<p>Автоматическая генерация документации из комментариев благодаря <code>docstrings</code></p>
+					<pre><code class="python">
+def add(a, b):
+    """
+    Функция для сложения двух чисел.
+    :param a: Первое число
+    :param b: Второе число
+    :return: Сумма a и b
+    """
+    return a + b
+					</code></pre>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b"><code class="python">Первая строка</code> - описывает функцию</div>
+						<div class="border-b"><code class="python">:param название:</code> - описание аргумента</div>
+						<div class="border-b"><code class="python">:return описание_возврата:</code> - описание данных, которые
+							возвращает модуль</div>
+					</div>
+				</section>
+				<section>
+					<h1>Правила оформления согласно PEP8</h1>
+					<ul>
+						<li>
+							Используйте 4 пробела для отступов
+						</li>
+						<li>
+							Ограничивайте строки 79 символами
+						</li>
+						<li>
+							Оставляйте два пустых пространства между определениями классов и функций
+						</li>
+					</ul>
+				</section>
 			</section>
 			<section>
-				<h1>Now supports automatic QRCode generation!</h1>
-				<div>With GoQR you can just add data-type and alt attributes to your <code
-						class="html">&lt;img alt="https://goqr.me/" data-type="qrcode" / &gt;</code> tag!</div>
-				<img class="r-stretch" alt="https://goqr.me/" data-type="qrcode" />
-				</h6>
-			</section>
-			<section>
-				<h1>New changes on the way!</h1>
+				<section>
+					<h1>pip</h1>
+					<p>система управления пакетами для Python, которая используется для установки и управления библиотеками и зависимостями</p>
+				</section>
 			</section>
 		</div>
 	</div>
